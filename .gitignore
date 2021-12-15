@@ -1,4 +1,4 @@
 *.o
-lr05
+lr0*
 compile_commands.json
 /.cache

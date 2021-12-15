@@ -1,2 +1,3 @@
-void compute12(int *array);
-void compute3(int *a, int *b, int *c, int r);
+int *sort_asc(int *array, int n);
+int *sort_desc(int *array, int n);
+void compute(int **array, int n);

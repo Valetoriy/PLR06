@@ -1,11 +1,11 @@
-#include "functions.h"
+#include "my_funk.h"
 #include <stdio.h>
 
 int main() {
 
     int n = 0;
 
-    puts("Zadacha №16, Krylov Artem Vyacheslavovich, IKPI-14");
+    puts("Zadacha №12, Krylov Artem Vyacheslavovich, IKPI-14");
 
     void (*arr[])() = {f1, f2, f3, f4};
 
