@@ -2,11 +2,11 @@
 
 #include "compute.h"
 
-int *sort_asc(int *array, int n) {
+double *sort_asc(double *array, int size) {
     return array;
 }
-int *sort_desc(int *array, int n) {
+double *sort_desc(double *array, int size) {
     return array;
 }
-void compute(int **array, int n) {
+void compute(double **array, int size) {
 }

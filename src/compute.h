@@ -1,3 +1,3 @@
-int *sort_asc(int *array, int n);
-int *sort_desc(int *array, int n);
-void compute(int **array, int n);
+double *sort_asc(double *array, int size);
+double *sort_desc(double *array, int size);
+void compute(double **array, int size);
