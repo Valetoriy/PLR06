@@ -34,7 +34,7 @@ void compute(double **array, int size, int singlerow) {
     int pcount;
     double *pgmean = (double *)malloc(size * sizeof(double));
     for (int i = 0; i < size; i++)
-        pgmean[i] = 1;
+        pgmean[i] = -1;
     double *sdiag = (double *)malloc(size * sizeof(double));
     FILE *file = fopen("dataout.txt", "a");
 
@@ -50,7 +50,10 @@ void compute(double **array, int size, int singlerow) {
             if (num < 0)
                 nsum[j] += num; // negative elem summ in each column
             else if (num >= 0) {
-                pgmean[i] *= num; // pos elem g-mean in each row
+                if (pgmean[i] < 0)
+                    pgmean[i] = num;
+                else
+                    pgmean[i] *= num; // pos elem g-mean in each row
                 pcount++;
             }
 
@@ -64,6 +67,11 @@ void compute(double **array, int size, int singlerow) {
         if (pcount)
             pgmean[i] = pow(pgmean[i], 1.0 / pcount);
     }
+
+    // cleanup
+    for (int i = 0; i < size; i++)
+        if (pgmean[i] < 0)
+            pgmean[i] = 0;
 
     // 1
     puts("Summa otritsatelnyh elem v kazhdom stolbtse:");
